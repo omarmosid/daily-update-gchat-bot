@@ -1,0 +1,6 @@
+name = "zaraz-daily"
+main = "src/index.ts"
+compatibility_date = "2023-04-27"
+
+[triggers]
+crons = [ "0 9 * * mon-fri" ]
