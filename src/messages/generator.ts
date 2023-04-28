@@ -1,4 +1,11 @@
 import { Env } from "../index";
+import { getRandomElementFromArray } from "../utils/getRandom";
+
+export const getGreeting = () => {
+  const greetings = ["Happy days!", "Shalom!", "Guten Tag!", "Salam!"];
+  const greeting = getRandomElementFromArray(greetings);
+  return greeting;
+};
 
 export const generateMessage = (options: any, env: Env) => {
   const date = new Intl.DateTimeFormat("en-US", {
@@ -7,11 +14,14 @@ export const generateMessage = (options: any, env: Env) => {
     day: "numeric",
   }).format(Date.now());
 
+  const greeting = getGreeting();
+
   return {
     text: `
     *_Good morning!_*
-    *_Daily update thread [ ${date} ]*
-    ---
+    *_Daily update thread [ ${date} ]_*
+    
+    -- feel free to copy-paste --
 
     *What am I trying to complete today?*
     answer
@@ -22,7 +32,7 @@ export const generateMessage = (options: any, env: Env) => {
     *What questions I have open, and to whom?*
     answer
 
-    Happy days! 🌻🦔
+    ${greeting} 🌻🦔
     `,
   };
 };
