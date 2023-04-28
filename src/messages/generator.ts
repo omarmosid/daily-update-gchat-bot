@@ -21,7 +21,7 @@ export const generateMessage = (options: any, env: Env) => {
     *_Good morning!_*
     *_Daily update thread [ ${date} ]_*
     
-    -- feel free to copy-paste --
+    -- Update template: feel free to copy-paste --
 
     *What am I trying to complete today?*
     answer
