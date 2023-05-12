@@ -22,13 +22,13 @@ export interface Env {
   // Example binding to R2. Learn more at https://developers.cloudflare.com/workers/runtime-apis/r2/
   // MY_BUCKET: R2Bucket;
 
-  ZARAZ_DAILY_WEBHOOK: string;
+  DAILY_WEBHOOK: string;
 }
 
 export default {
   async fetch(request: Request, env: Env, _ctx: ExecutionContext) {
     const message = generateMessage(null, env);
-    const webhook = env.ZARAZ_DAILY_WEBHOOK;
+    const webhook = env.DAILY_WEBHOOK;
 
     if (request.method === "POST") {
       await fetch(webhook, {
@@ -50,7 +50,7 @@ export default {
     ctx: ExecutionContext
   ): Promise<void> {
     const message = generateMessage(null, env);
-    const webhook = env.ZARAZ_DAILY_WEBHOOK;
+    const webhook = env.DAILY_WEBHOOK;
 
     await fetch(webhook, {
       method: "POST",

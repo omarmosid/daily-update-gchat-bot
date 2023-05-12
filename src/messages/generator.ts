@@ -18,21 +18,20 @@ export const generateMessage = (options: any, env: Env) => {
 
   return {
     text: `
-    *_Good morning!_*
-    *_Daily update thread [ ${date} ]_*
+*_Good morning!_*
+*_Daily update thread [ ${date} ]_*
     
-    -- Update template: feel free to copy-paste --
+-- Update template: feel free to copy-paste --
 
-    *What am I trying to complete today?*
-    answer
-  
-    *What is blocking me?*
-    answer
-  
-    *What questions I have open, and to whom?*
-    answer
+*What am I trying to complete today?*
+answer
 
-    ${greeting} 🌻🦔
-    `,
+*What is blocking me?*
+answer
+  
+*What questions I have open, and to whom?*
+answer
+
+${greeting} 🌻🦔`,
   };
 };
